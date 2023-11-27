@@ -10,6 +10,10 @@ function App() {
     {
       name: "mew",
     },
+    {
+      name: "mewto",
+      imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png"
+    },
   ];
   const selectedPokemon = pokemonList[1];
 
