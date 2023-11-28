@@ -60,11 +60,15 @@ function App() {
       setPokemonIndex(pokemonIndex + 1);
     }
   };
+  const handlePokemonSelected = (index) => {
+    setPokemonIndex(index);
+  };
 
 
   return (
     <div className="App">
       <NavBar
+        handlePokemonSelected={handlePokemonSelected}
         pokemonList={pokemonList}
         pokemonIndex={pokemonIndex}
         precedentPokemon={precedentPokemon}
