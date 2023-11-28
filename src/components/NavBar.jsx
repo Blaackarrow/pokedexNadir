@@ -1,14 +1,13 @@
 import React from 'react';
 
-function NavBar({ precedentPokemon, nextPokemon, pokemonIndex, pokemonList }) {
+function NavBar({ pokemonList, handlePokemonSelected }) {
     return (
         <div className="pokemon-navigation">
-            {pokemonIndex > 0 && (
-                <button onClick={precedentPokemon}>Précédent</button>
-            )}
-            {pokemonIndex < pokemonList.length - 1 && (
-                <button onClick={nextPokemon}>Suivant</button>
-            )}
+            {pokemonList.map((pokemon, index) => (
+                <button key={index} onClick={() => handlePokemonSelected(index)}>
+                    {pokemon.name}
+                </button>
+            ))}
         </div>
     );
 }
