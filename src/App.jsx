@@ -1,5 +1,7 @@
+
 import PokemonCard from "./components/PokemonCard"
 import { useState } from "react";
+import NavBar from "./components/NavBar";
 
 function App() {
 
@@ -9,8 +11,24 @@ function App() {
       imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
     },
     {
+      name: "herbizarre",
+      imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
+    },
+    {
+      name: "florizarre",
+      imgSrc: "https://www.123-stickers.com/7672-thickbox/autocollant-florizarre-pokemon-003.jpg",
+    },
+    {
       name: "salamèche",
       imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    },
+    {
+      name: "reptincel",
+      imgSrc: "https://www.pokepedia.fr/images/thumb/6/64/Reptincel-RFVF.png/250px-Reptincel-RFVF.png",
+    },
+    {
+      name: "dracaufeu",
+      imgSrc: "https://www.pokepedia.fr/images/thumb/1/17/Dracaufeu-RFVF.png/800px-Dracaufeu-RFVF.png",
     },
     {
       name: "carapuce",
@@ -46,14 +64,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="pokemon-navigation">
-        {pokemonIndex > 0 && (
-          <button onClick={precedentPokemon}>Précédent</button>
-        )}
-        {pokemonIndex < pokemonList.length - 1 && (
-          <button onClick={nextPokemon}>Suivant</button>
-        )}
-      </div>
+      <NavBar
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        precedentPokemon={precedentPokemon}
+        nextPokemon={nextPokemon}
+      />
       <PokemonCard pokemon={selectedPokemon} />
     </div>
   );
