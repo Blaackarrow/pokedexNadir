@@ -2,6 +2,7 @@
 import PokemonCard from "./components/PokemonCard"
 import { useState } from "react";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
 
 function App() {
 
@@ -63,6 +64,11 @@ function App() {
   const handlePokemonSelected = (index) => {
     setPokemonIndex(index);
   };
+  useEffect(() => {
+    alert("hello pokemon trainer ! :)")
+  },
+    []
+  );
 
 
   return (
